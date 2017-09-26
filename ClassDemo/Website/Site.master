@@ -49,18 +49,11 @@
                     <a class="navbar-brand" runat="server" href="~/">DMIT2018</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <%--   replace the default menu with a menu control
-                           which will be located after the LoginView control
-                           The menu control is move there to allow for proper
-                              representation on the web paper to get around the
-                              bootstrap formating
-                                        
-                        <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/SamplePages/FirstLinqSample">First Linq Sample</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                    </ul>--%>
+                    <ul class="nav navbar-nav">
+                    <li><a runat="server" href="~/">Home</a></li>
+                    <li><a runat="server" href="~/About">About</a></li>
+                    <li><a runat="server" href="~/Contact">Contact</a></li>
+                    </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
@@ -77,37 +70,6 @@
                             </ul>
                         </LoggedInTemplate>
                     </asp:LoginView>
-                    <%-- Replacement Menu
-                        two way of creating the menu
-                        a) use the CPSC1517 techinque of Menu control, web.sitemap
-                           SiteMapDataSource control
-                        b) code the Menu control and content in this area
-                        --%>
-                    <asp:Menu ID="navMenu" runat="server"
-                         BackColor="#000000" BorderColor="Red"
-                          StaticMenuItemStyle-ForeColor="#999999"
-                         StaticMenuItemStyle-Font-Size="Large"
-                         StaticMenuItemStyle-VerticalPadding="12px"
-                         StaticMenuItemStyle-HorizontalPadding="10px"
-                         RenderingMode="List" Orientation="Horizontal"
-                         DynamicMenuItemStyle-ForeColor="#999999"
-                        DynamicMenuItemStyle-Font-Size="Large"
-                         DynamicMenuStyle-BackColor="Black">
-                        <Items>
-                            <asp:MenuItem Text="Home" NavigateUrl="~/"></asp:MenuItem>
-                       
-                            <asp:MenuItem Text="Queries" >
-                                <asp:MenuItem Text="First Linq Sample"
-                                     NavigateUrl="~/SamplePages/FirstLinqSample.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Albums by Year Range"
-                                     NavigateUrl="~/SamplePages/AlbumsByYearRange.aspx"></asp:MenuItem>
-                            </asp:MenuItem>
-
-                            <asp:MenuItem Text="About" NavigateUrl="~/About.aspx"></asp:MenuItem>
-                            <asp:MenuItem Text="Contact" NavigateUrl="~/Contact.aspx"></asp:MenuItem>
-
-                             </Items>
-                    </asp:Menu>
                 </div>
             </div>
         </div>
