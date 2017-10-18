@@ -129,4 +129,11 @@ public partial class SamplePages_TabbedCRUDReview : System.Web.UI.Page
         ReleaseYear.Text = "";
         ReleaseLabel.Text = "";
     }
+
+    //this method is required to use the MessageUserControl
+    //on the ListView. the Listview will be wired to this method
+    protected void CheckForException(object sender, ObjectDataSourceStatusEventArgs e)
+    {
+        MessageUserControl.HandleDataBoundException(e);
+    }
 }
