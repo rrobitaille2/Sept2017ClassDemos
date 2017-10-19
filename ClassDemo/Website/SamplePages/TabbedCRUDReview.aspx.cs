@@ -130,5 +130,9 @@ public partial class SamplePages_TabbedCRUDReview : System.Web.UI.Page
         ReleaseLabel.Text = "";
     }
 
- 
+    protected void CheckForException(object sender, ObjectDataSourceStatusEventArgs e)
+    {
+        MessageUserControl.HandleDataBoundException(e);
+    }
+
 }
