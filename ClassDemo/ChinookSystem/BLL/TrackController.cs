@@ -18,16 +18,118 @@ namespace ChinookSystem.BLL
     public class TrackController
     {
         [DataObjectMethod(DataObjectMethodType.Select,false)]
-        public List<TrackList> List_TracksForPlaylistSelection(string tracksby, int argid)
+        public List<TrackList> List_TracksForPlaylistSelection(string tracksby, 
+                                                                int argid)
         {
             using (var context = new ChinookContext())
             {
-                List<TrackList> results = null;
+                IEnumerable<TrackList> results = null;
 
-               //code to go here
-             
+                //code to go here
+                //determine which lookup needs to be done : tracksby
+                //switch (tracksby)
+                //{
+                //    case "Artist":
+                //        {
+                //            results = from x in context.Tracks
+                //                      orderby x.Name
+                //                      where x.Album.ArtistId == argid
+                //                      select new TrackList
+                //                      {
+                //                          TrackID = x.TrackId,
+                //                          Name = x.Name,
+                //                          Title = x.Album.Title,
+                //                          MediaName = x.MediaType.Name,
+                //                          GenreName = x.Genre.Name,
+                //                          Composer = x.Composer,
+                //                          Milliseconds = x.Milliseconds,
+                //                          Bytes = x.Bytes,
+                //                          UnitPrice = x.UnitPrice
+                //                      };
+                //            break;
+                //        }
+                //    case "MediaType":
+                //        {
+                //            results = from x in context.Tracks
+                //                      orderby x.Name
+                //                      where x.MediaTypeId==argid
+                //                      select new TrackList
+                //                      {
+                //                          TrackID = x.TrackId,
+                //                          Name = x.Name,
+                //                          Title = x.Album.Title,
+                //                          MediaName = x.MediaType.Name,
+                //                          GenreName = x.Genre.Name,
+                //                          Composer = x.Composer,
+                //                          Milliseconds = x.Milliseconds,
+                //                          Bytes = x.Bytes,
+                //                          UnitPrice = x.UnitPrice
+                //                      };
+                //            break;
+                //        }
+                //    case "Genre":
+                //        {
+                //            results = from x in context.Tracks
+                //                      orderby x.Name
+                //                      where x.GenreId == argid
+                //                      select new TrackList
+                //                      {
+                //                          TrackID = x.TrackId,
+                //                          Name = x.Name,
+                //                          Title = x.Album.Title,
+                //                          MediaName = x.MediaType.Name,
+                //                          GenreName = x.Genre.Name,
+                //                          Composer = x.Composer,
+                //                          Milliseconds = x.Milliseconds,
+                //                          Bytes = x.Bytes,
+                //                          UnitPrice = x.UnitPrice
+                //                      };
+                //            break;
+                //        }
+                //    default:
+                //        {
+                //            results = from x in context.Tracks
+                //                      orderby x.Name
+                //                      where x.AlbumId == argid
+                //                      select new TrackList
+                //                      {
+                //                          TrackID = x.TrackId,
+                //                          Name = x.Name,
+                //                          Title = x.Album.Title,
+                //                          MediaName = x.MediaType.Name,
+                //                          GenreName = x.Genre.Name,
+                //                          Composer = x.Composer,
+                //                          Milliseconds = x.Milliseconds,
+                //                          Bytes = x.Bytes,
+                //                          UnitPrice = x.UnitPrice
+                //                      };
+                //            break;
+                //        }
+                //}
 
-                return results;
+                //using an inline if
+                results = from x in context.Tracks
+                          orderby x.Name
+                          where tracksby.Equals("Artist") ? x.Album.ArtistId == argid :
+                          tracksby.Equals("MediaType") ? x.MediaTypeId == argid :
+                          tracksby.Equals("Genre") ? x.GenreId == argid :
+                          x.AlbumId == argid
+                          select new TrackList
+                          {
+                              TrackID = x.TrackId,
+                              Name = x.Name,
+                              Title = x.Album.Title,
+                              MediaName = x.MediaType.Name,
+                              GenreName = x.Genre.Name,
+                              Composer = x.Composer,
+                              Milliseconds = x.Milliseconds,
+                              Bytes = x.Bytes,
+                              UnitPrice = x.UnitPrice
+                          };
+
+
+
+                return results.ToList();
             }
         }//eom
 

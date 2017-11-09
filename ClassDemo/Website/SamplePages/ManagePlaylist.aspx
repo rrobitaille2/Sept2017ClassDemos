@@ -244,8 +244,10 @@
         TypeName="ChinookSystem.BLL.TrackController"
          OnSelected="CheckForException">
         <SelectParameters>
-            <asp:ControlParameter ControlID="TracksBy" PropertyName="Text" Name="tracksby" Type="String"></asp:ControlParameter>
-            <asp:ControlParameter ControlID="SearchArgID" PropertyName="Text" Name="argid" Type="Int32"></asp:ControlParameter>
+            <asp:ControlParameter ControlID="TracksBy" PropertyName="Text" 
+                Name="tracksby" Type="String"></asp:ControlParameter>
+            <asp:ControlParameter ControlID="SearchArgID" PropertyName="Text" 
+                Name="argid" Type="Int32"></asp:ControlParameter>
         </SelectParameters>
     </asp:ObjectDataSource>
 </asp:Content>
