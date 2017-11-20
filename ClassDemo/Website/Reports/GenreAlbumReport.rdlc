@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.90625in</Width>
+              <Width>3.625in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.1875in</Width>
+              <Width>3.92708in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.91667in</Width>
@@ -441,7 +441,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value EvaluationMode="Constant" />
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -513,11 +513,12 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value EvaluationMode="Constant" />
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>0.0;(0.0);''</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -693,6 +694,7 @@
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>11pt</FontSize>
+                                <Format>0.0;(0.0);''</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -811,7 +813,7 @@
         </TablixRowHierarchy>
         <DataSetName>GenreAlbumReportDS</DataSetName>
         <Height>1in</Height>
-        <Width>9.20833in</Width>
+        <Width>10.66667in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -819,10 +821,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.51042in</Height>
+    <Height>1.44792in</Height>
     <Style />
   </Body>
-  <Width>9.20833in</Width>
+  <Width>10.66667in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
